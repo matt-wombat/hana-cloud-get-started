@@ -4,8 +4,15 @@ This repository is based on the SAP Developers Mission "Get Started with the SAP
 
 Source: https://developers.sap.com/mission.hana-cloud-get-started.html
 
+All copyrights belong to SAP
 
-# Prerequisites:
+# Features
+
+* Database module with table, index and data for performance evaluation
+* Additional access to plain non-hdi-schema via user-provided service and synonyms 
+
+
+# Prerequisites
 
 ## Create plain schema
 
