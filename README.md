@@ -9,15 +9,15 @@ Source: https://developers.sap.com/mission.hana-cloud-get-started.html
 
 ## Create plain schema
 
-CREATE SCHEMA "PLAIN";
-CREATE USER PLUSR PASSWORD "HanaRocks01" SET USERGROUP DEFAULT;
-  ALTER USER PLUSR DISABLE PASSWORD LIFETIME;
-
-CREATE ROW TABLE "PLAIN"."REGIONS" (	REGION NVARCHAR(5), 	DESCRIPTION NVARCHAR(100) );
-
-CREATE ROLE CCROLE;
-grant  SELECT, UPDATE, INSERT, DELETE, EXECUTE, SELECT METADATA ON SCHEMA "PLAIN" TO CCROLE with grant option;
-grant  CCROLE to PLUSR with admin option;
+    CREATE SCHEMA "PLAIN";
+    CREATE USER PLUSR PASSWORD "HanaRocks01" SET USERGROUP DEFAULT;
+      ALTER USER PLUSR DISABLE PASSWORD LIFETIME;
+    
+    CREATE ROW TABLE "PLAIN"."REGIONS" (	REGION NVARCHAR(5), 	DESCRIPTION NVARCHAR(100) );
+    
+    CREATE ROLE CCROLE;
+    grant  SELECT, UPDATE, INSERT, DELETE, EXECUTE, SELECT METADATA ON SCHEMA "PLAIN" TO CCROLE with grant option;
+    grant  CCROLE to PLUSR with admin option;
 
 Import plain.csv data into "PLAIN"."REGIONS".
 
@@ -25,7 +25,7 @@ Details see https://developers.sap.com/tutorials/hana-cloud-access-cross-contain
 
 ## Create user provided services
 
-cf cups CC_ACCESS -p "{\"user\":\"PLUSR\",\"password\":\"HanaRocks01\",\"tags\":[\"hana\"] , \"schema\" : \"PLAIN\" }"
+    cf cups CC_ACCESS -p "{\"user\":\"PLUSR\",\"password\":\"HanaRocks01\",\"tags\":[\"hana\"] , \"schema\" : \"PLAIN\" }"
 
 
 
