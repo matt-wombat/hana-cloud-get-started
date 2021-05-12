@@ -35,6 +35,13 @@ Details see https://developers.sap.com/tutorials/hana-cloud-access-cross-contain
 
     cf cups CC_ACCESS -p "{\"user\":\"PLUSR\",\"password\":\"HanaRocks01\",\"tags\":[\"hana\"] , \"schema\" : \"PLAIN\" }"
 
-
-
 https://developers.sap.com/tutorials/hana-cloud-access-cross-container-schema.html#df3855dd-79fb-42b0-94ae-2f1e9402f268
+
+## Create HDI Service
+
+If necessary
+
+## Refresh Anonymization View
+
+    refresh view V_SALARIES anonymization;
+    
