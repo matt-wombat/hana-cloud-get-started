@@ -36,4 +36,4 @@ ex_top_3_emp_po_combined_cnt =
             ON emp.email = chcnt.EID
         ORDER BY COMBINED_CNT DESC LIMIT 3;
 
-END
+END;
