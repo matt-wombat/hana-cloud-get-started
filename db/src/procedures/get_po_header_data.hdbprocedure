@@ -1,6 +1,6 @@
 PROCEDURE "get_po_header_data"(
         OUT EX_TOP_3_EMP_PO_COMBINED_CNT TABLE (
-            LOGINNAME NVARCHAR(12),
+            FULLNAME NVARCHAR(256),
             CREATE_CNT INTEGER,
             CHANGE_CNT INTEGER,
             COMBINED_CNT INTEGER))
@@ -27,7 +27,8 @@ po_change_cnt =
         GROUP BY "MODIFIEDBY";
 
 ex_top_3_emp_po_combined_cnt = 
-    SELECT emp.LOGINNAME, crcnt.CREATE_CNT, chcnt.CHANGE_CNT, 
+    SELECT "get_full_name"("NAMEFIRST", "NAMEMIDDLE", "NAMELAST") AS FULLNAME, 
+        crcnt.CREATE_CNT, chcnt.CHANGE_CNT, 
         crcnt.CREATE_CNT + chcnt.CHANGE_CNT as COMBINED_CNT
         FROM "OPENSAP_MD_EMPLOYEES" AS EMP
         LEFT OUTER JOIN :po_create_cnt as crcnt
