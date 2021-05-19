@@ -11,6 +11,8 @@ All copyrights belong to SAP
 * Database module with table, index and data for performance evaluation
 * Additional access to plain non-hdi-schema via user-provided service and synonyms 
 * Calculation view with differential privacy
+* Database tables with sample data
+* SQLScript Artefacts
 
 
 # Prerequisites
